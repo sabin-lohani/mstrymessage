@@ -60,6 +60,7 @@ export async function POST(request: Request) {
         { status: 500 }
       );
 
+    console.log(emailResponse);
     return Response.json(
       {
         success: true,
