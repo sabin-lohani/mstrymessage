@@ -42,7 +42,7 @@ export default function page() {
       password: data.password,
     });
     setIsSubmitting(false);
-    console.log(result);
+
     if (result?.error)
       toast({
         title: "Login failed",
@@ -50,11 +50,11 @@ export default function page() {
         variant: "destructive",
       });
 
-    if (result?.url) router.replace("/dashboard");
+    if (result?.url) return router.replace("/dashboard");
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <main className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
@@ -110,6 +110,6 @@ export default function page() {
           </p>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

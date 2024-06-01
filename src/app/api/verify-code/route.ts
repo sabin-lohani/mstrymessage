@@ -9,7 +9,7 @@ export async function POST(request: Request) {
 
     const user = await User.findOne({
       username: decodedUsername,
-      verificationCode: code,
+      verifyCode: code,
     });
 
     if (!user) {
